@@ -7,10 +7,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Postman {
-    private PostmanInfo info;
-    private PostmanItem[] item;
-    private PostmanVariable[] variable;
+@NoArgsConstructor
+public class PostmanVariable {
+    private String key;
+    private String value;
 }
