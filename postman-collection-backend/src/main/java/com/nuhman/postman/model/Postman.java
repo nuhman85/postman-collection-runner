@@ -13,4 +13,5 @@ public class Postman {
     private PostmanInfo info;
     private PostmanItem[] item;
     private PostmanVariable[] variable;
+    private PostmanEvent[] event;
 }
