@@ -7,10 +7,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class PostmanRequest {
-    private HTTPRequestMethod method;
-    private PostmanHeader[] header;
-    private PostmanUrl url;
+@AllArgsConstructor
+public class PostmanHeader {
+    private String key;
+    private String value;
+    private String type;
 }
