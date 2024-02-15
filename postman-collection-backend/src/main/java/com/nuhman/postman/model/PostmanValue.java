@@ -1,4 +1,17 @@
 package com.nuhman.postman.model;
 
-public record PostmanValue(String key, String value, boolean  enabled, PostmanValueType postmanValueType) {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class PostmanValue {
+    private String key;
+    private String value;
+    private boolean  enabled;
+    private PostmanValueType postmanValueType;
 }
