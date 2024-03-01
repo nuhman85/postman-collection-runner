@@ -30,6 +30,32 @@ public class PostmanServiceImpl implements PostmanService {
         System.out.println("httpPostRequest : " + responseBody);
     }
 
+    public static void httpGetRequest() throws URISyntaxException, IOException, InterruptedException {
+        HttpClient client = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_2)
+                .build();
+        HttpRequest request = HttpRequest.newBuilder(new URI("http://jsonplaceholder.typicode.com/posts"))
+                .version(HttpClient.Version.HTTP_2)
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        String responseBody = response.body();
+        System.out.println("httpPostRequest : " + responseBody);
+    }
+
+    public static void httpPutRequest() throws URISyntaxException, IOException, InterruptedException {
+        HttpClient client = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_2)
+                .build();
+        HttpRequest request = HttpRequest.newBuilder(new URI("http://jsonplaceholder.typicode.com/posts"))
+                .version(HttpClient.Version.HTTP_2)
+                .PUT(HttpRequest.BodyPublishers.ofString("Sample Post Request"))
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        String responseBody = response.body();
+        System.out.println("httpPostRequest : " + responseBody);
+    }
+
     
 
 }
